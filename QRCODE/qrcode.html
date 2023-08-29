@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f7f7f7;
+    }
+
+    .product-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-info h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .description {
+      color: #777;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #FF5722;
+      margin-bottom: 15px;
+    }
+
+    .continue-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #FF5722;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .continue-button:hover {
+      background-color: #FF6E40;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .qrcode-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #777;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-container" id="product1">
+    <div class="product-image">
+      <img src="/img/PIZZA-SOBREMESAS/Calabresa-Champion.jpeg" alt="Pizza">
+    </div>
+    <div class="product-info">
+      <h1>Pizza de Calabresa</h1>
+      <p class="description">Deliciosa pizza de calabresa com massa crocante, queijo derretido e saborosas fatias de calabresa.</p>
+      <p class="price">$69.99</p>
+      <button class="continue-button" onclick="showQRCodePopup()">Continuar</button>
+    </div>
+  </div>
+
+  <div id="qrcodePopup" class="popup">
+    <div class="qrcode-container">
+      <span class="close" onclick="closeQRCodePopup()">&times;</span>
+      <div id="qrcode-content"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script>
+    function showQRCodePopup() {
+      const qrcodePopup = document.getElementById("qrcodePopup");
+      qrcodePopup.style.display = "flex";
+
+      const qrcodeContainer = document.getElementById("qrcode-content");
+      const qrcode = new QRCode(qrcodeContainer, {
+        text: "Obrigado pela Compra",
+        width: 200,
+        height: 200,
+      });
+    }
+
+    function closeQRCodePopup() {
+      const qrcodePopup = document.getElementById("qrcodePopup");
+      qrcodePopup.style.display = "none";
+    }
+  </script>
+</body>
+</html>

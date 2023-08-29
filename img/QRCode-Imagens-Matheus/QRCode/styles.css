@@ -1,0 +1,84 @@
+/* Reset de estilos básicos */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Estilos gerais */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; /* Garante que o pop-up esteja acima do conteúdo */
+  }
+  
+  .popup-content {
+    background-color: #FFF;
+    width: 90%; /* Aumentar a largura do pop-up */
+    max-width: 600px; /* Limitar a largura máxima */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 20px; /* Borda mais arredondada */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FF7F50; /* Cor laranja */
+  }
+  
+  /* Estilo para o botão de mostrar pop-up */
+  #showPopup {
+    margin-top: 30px;
+    background-color: #FF7F50; /* Cor laranja */
+    border: none;
+    color: white;
+    padding: 18px 36px; /* Aumentar o preenchimento */
+    border-radius: 15px; /* Borda mais arredondada */
+    font-size: 18px; /* Tamanho da fonte aumentado */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave de cor de fundo e escala */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra de texto suave */
+  }
+  
+  #showPopup:hover {
+    background-color: #FF6A30; /* Cor laranja mais escura ao passar o mouse */
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+  }
+  
+  /* Estilos para o QR Code */
+  #qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #F5F5F5; /* Cinza claro */
+    border-radius: 15px; /* Borda mais arredondada */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+  
+  #qrcode-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Borda mais arredondada */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
